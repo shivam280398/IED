@@ -22,7 +22,7 @@ public class Clock extends ActionBarActivity {
 
     ImageButton On, Off, Discnt, Abt;
     String address = null;
-    TextView myTextbox ;
+    TextView myTextbox,Textbox2 ;
     private ProgressDialog progress;
     BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
@@ -44,10 +44,10 @@ public class Clock extends ActionBarActivity {
         //call the widgets
         myTextbox = (EditText)findViewById(R.id.edt);
         On = (ImageButton)findViewById(R.id.on);
-        Off = (ImageButton)findViewById(R.id.off);
+        //Off = (ImageButton)findViewById(R.id.off);
         Discnt = (ImageButton)findViewById(R.id.discnt);
         Abt = (ImageButton)findViewById(R.id.abt);
-
+        Textbox2 = (EditText)findViewById(R.id.edt2);
         new Clock.ConnectBT().execute(); //Call the class to connect
         //commands to be sent to bluetooth
         On.setOnClickListener(new View.OnClickListener()
@@ -59,14 +59,14 @@ public class Clock extends ActionBarActivity {
             }
         });
 
-        Off.setOnClickListener(new View.OnClickListener() {
+        /*Off.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
                 turnOffLed();   //method to turn off
             }
         });
-
+*/
         Discnt.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -115,8 +115,13 @@ public class Clock extends ActionBarActivity {
         {
             try
             {
-                String msg = myTextbox.getText().toString();
+                String msg1 = myTextbox.getText().toString();
+                String msg2 = Textbox2.getText().toString();
+                String msg = msg1 + msg2;
                 btSocket.getOutputStream().write(msg.getBytes());
+
+                //String msg2 = Textbox2.getText().toString();
+                //btSocket.getOutputStream().write(msg2.getBytes());
             }
             catch (IOException e)
             {

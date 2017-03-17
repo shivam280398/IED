@@ -23,7 +23,23 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:textSize="50dp"
+        android:layout_marginLeft="60dp"
         android:layout_below="@+id/textView2"/>
+    <TextView
+        android:text=":"
+        android:textSize="50dp"
+        android:layout_width="30dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/textView2"
+        android:layout_marginLeft="160dp"/>
+
+    <EditText
+        android:id="@+id/edt2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:textSize="50dp"
+        android:layout_below="@+id/textView2"
+        android:layout_marginLeft="200dp"/>
 
 
 
@@ -32,40 +48,51 @@
         android:layout_height="wrap_content"
         android:id="@+id/on"
         android:background="@null"
-        android:src="@drawable/on"
-        android:layout_marginBottom="79dp"
-        android:layout_above="@+id/off"
-        android:layout_centerHorizontal="true" />
+        android:adjustViewBounds="true"
+        android:src="@drawable/set"
+        android:scaleType="fitCenter"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:layout_below="@+id/edt"
+        android:layout_toLeftOf="@+id/abt"
+        android:layout_toStartOf="@+id/abt"
+        android:layout_marginTop="27dp" />
+    <!--
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/off"
+            android:src="@drawable/red"
+            android:background="@null"
+            android:layout_above="@+id/discnt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="153dp" />
+    -->
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/on"
+        android:layout_marginLeft="140dp"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/discnt"
+            android:src="@drawable/disconnect"
+            android:background="@null"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/off"
-        android:src="@drawable/red"
-        android:background="@null"
-        android:layout_above="@+id/discnt"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="153dp" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/abt"
+            android:background="@null"
+            android:onClick="about"
+            android:src="@drawable/about"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/discnt"
-        android:src="@drawable/disconnect"
-        android:background="@null"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/abt"
-        android:background="@null"
-        android:onClick="about"
-        android:src="@drawable/about"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-</RelativeLayout>
+    </RelativeLayout>
